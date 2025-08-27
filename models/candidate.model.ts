@@ -1,5 +1,6 @@
 import mongoose , {Document , Schema} from "mongoose"
 
+
 export interface Candidate extends Document{
     id : string,
     email : string,
@@ -10,6 +11,8 @@ export interface Candidate extends Document{
     avatar : string
     isVerified : boolean,
     otp : number
+    createdAt : Date,
+    updatedAt : Date    
 }
 const candidateSchema : Schema<Candidate>  = new Schema({
     email: { 
@@ -47,8 +50,8 @@ const candidateSchema : Schema<Candidate>  = new Schema({
         type: Number,
         required: true 
     }
-});
+}, {timestamps: true});
 
-const User = (mongoose.models.User as mongoose.Model<Candidate>) || mongoose.model<Candidate>('User', candidateSchema);
+const Candidate = (mongoose.models.Candidate as mongoose.Model<Candidate>) || mongoose.model<Candidate>('Candidate', candidateSchema);
 
-export default User; 
+export default Candidate; 
