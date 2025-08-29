@@ -83,7 +83,7 @@ export async function fetchCandidateProfile(candidateId: string): Promise<Profil
     return { success: false, message: "Error fetching profile", data: null, completionPercentage: 0 }
   }
 
-}
+//need to be updated
 
 function calculateCompletion(data: any): number {
   const fields = [

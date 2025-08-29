@@ -3,7 +3,7 @@ import mongoose, { Mongoose } from "mongoose";
 const MONGODB_URI: string | undefined = process.env.NEXT_MONGODB_URI;
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable inside .env.local");
+  throw new Error("Please define the NEXT_MONGODB_URI environment variable inside .env.local");
 }
 interface MongooseCache {
   conn: Mongoose | null;
